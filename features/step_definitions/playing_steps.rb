@@ -21,3 +21,8 @@ end
 When(/^I choose Paper$/) do
   click_button('Paper')
 end
+
+Given(/^I've played a game$/) do
+  step "I've registered to play"
+  step "I choose Paper"
+end

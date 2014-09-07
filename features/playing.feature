@@ -14,3 +14,7 @@ Scenario: A player is playing
 	Given I've registered to play
 	When I choose Paper
 	Then I should see "RESULTS"
+
+Scenario: Playing a second time
+	Given I've played a game
+	Then I should see "Play Again!"

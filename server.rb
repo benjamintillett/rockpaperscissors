@@ -5,6 +5,8 @@ require './lib/game'
 
 class RockPaperScissors < Sinatra::Base
 
+  enable :sessions
+
   configure :production do
     require 'newrelic_rpm'
   end
@@ -19,7 +21,13 @@ class RockPaperScissors < Sinatra::Base
 
   post '/register' do 
   	@player = params[:name]
+    session[:name] = @player
   	erb :play	
+  end
+
+  get '/play' do 
+    @player = session[:name]
+    erb :play    
   end
 
   post "/play" do
