@@ -1,11 +1,23 @@
-RESULTS:
-<% if @game.winner == "Draw" %>
- <h1> it was a draw </h1>
- <% elsif @game.winner.name == "computer" %>
- <h1> You lost, the computer won with <%= @game.winner.pick %></h1>
-<% else %>
-<h1> You won, with <%= @game.winner.pick %> </h1>
-<%end%>
 
-<p><a href="/play">Play Again!</a></p>
 
+
+
+
+<div class="jumbotron">
+  <h2>RESULTS:</h2>
+  <p>
+	<% if @game.winner == "Draw" %>
+		 it was a draw
+	<% elsif @game.winner.name == "computer" %>
+	 	You lost, the computer won with <%= @game.winner.pick %>
+	<% else %>
+		You won, with <%= @game.winner.pick %> 
+	<%end%>
+  </p>
+
+  <p>
+  	<a class="btn btn-primary btn-lg" href="/play" role="button">
+  		Play Again!
+  	</a>
+  </p>
+</div>
