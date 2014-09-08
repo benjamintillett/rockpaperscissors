@@ -1,8 +1,27 @@
-<h1>Welcome <%= @player%></h1>
+<div class="container">
 
-<form action="/play" method="POST">
-	<button name="pick" value="Paper">Paper</button>
-	<button name="pick" value="Rock">Rock</button>
-	<button name="pick" value="Scissors">Scissors</button>
-	<input type="hidden" name="name" value=<%=@name%>>
-</form>
+	<h1>Welcome <%= @player%></h1>
+
+	<form action="/play" method="POST">
+
+	<div class="col-md-4">
+		<button class="col-md-12" name="pick" value="Paper">
+			<img id="paper-img" src="http://e08595.medialib.glogster.com/media/4e/4e07b0a36eab768ca8474a04c2199f4a4633ff8af53f2a4d47e1323c657f7ffe/paper-png.png">
+		</button>
+	</div>
+	<div class="col-md-4">
+
+		<button name="pick" value="Rock">
+			<img src="http://fc02.deviantart.net/fs71/i/2013/012/f/f/rock_02_png___by_alzstock-d5r85eg.png">
+		</button>
+	</div>
+	<div class="col-md-4">
+		<button name="pick" value="Scissors">
+			<img src="images/Scissors.png">
+		</button>
+	</div>
+	<div class="col-md-12">
+		<input type="hidden" name="name" value=<%=@name%>>
+	<div>
+	</form>
+</div>
